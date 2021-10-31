@@ -1,0 +1,44 @@
+<!--index.wxml-->
+<view class="container">
+  132 <text>{{msg}}</text>
+</view>
+<view>
+  我叫{{obj.name}}今年{{obj.age}}岁
+</view>
+<view>
+  <checkbox checked="{{isChecked}}" ></checkbox>
+</view>
+
+<view wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="id">
+  id:{{item.id}} 姓名:{{item.name}}
+</view>
+
+<view wx:for="{{list}}" wx:key="id">
+  姓名:{{item.name}} id:{{item.id}}
+</view>
+
+<view>
+  <view>对象循环</view>
+  <view wx:for="{{obj}}" wx:key="name">
+    key: {{index}}  -- value:{{item}}
+  </view>
+</view>
+
+<block wx:for="{{list}}" wx:key="id">
+  姓名:{{item.name}} id:{{item.id}}
+</block>
+
+<view>
+  <view>条件渲染</view>
+  <view wx:if="{{true}}">显示</view>
+  <view wx:if="{{false}}">隐藏</view>
+
+  <view wx:if="{{false}}">1</view>
+  <view wx:elif="{{false}}">2</view>
+  <view wx:else>3</view>
+
+  <view>-------------------</view>
+  <view hidden>hidden</view>
+  <view hidden="{{false}}">111</view>
+</view>
+
